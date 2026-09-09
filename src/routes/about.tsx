@@ -8,88 +8,49 @@ import about from "@/assets/about.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Mara Alves — Lisbon Photographer" },
+      { title: "About — Alif Suvo" },
       {
         name: "description",
         content:
-          "Mara Alves is a Lisbon-based photographer making unhurried, natural-light family, couple and portrait pictures.",
+          "About Alif Suvo, an independent photographer and visual storyteller currently working from Lisbon.",
       },
-      { property: "og:title", content: "About Mara Alves — Lisbon Photographer" },
+      { property: "og:title", content: "About — Alif Suvo" },
       {
         property: "og:description",
-        content: "Unhurried, natural-light photography made in Lisbon and along the coast.",
+        content: "Independent photography and visual storytelling by Alif Suvo.",
       },
     ],
   }),
   component: About,
 });
 
-const places = [
-  "Alfama & Graça",
-  "Príncipe Real",
-  "Praia do Guincho",
-  "Sintra woodland",
-  "Your own home",
-  "Cais das Colunas",
-];
-
 function About() {
   return (
     <>
       <PageHeader
         label="About"
-        title="I'd rather you forget I'm there."
-        intro="I'm Mara — born in Porto, at home in Lisbon for the last twelve years. I photograph people the way I'd want my own family photographed: softly, patiently, without direction they can feel."
+        title="Alif Suvo"
+        intro="Independent photographer and visual storyteller. Currently working from Lisbon."
       />
 
       <div className="mx-auto grid max-w-[1400px] gap-12 px-6 pb-28 sm:px-10 lg:grid-cols-[1.05fr_1fr] lg:gap-24 lg:pb-40">
         <Reveal>
           <ParallaxImage
             src={about}
-            alt="Portrait of Mara Alves holding her camera in a Lisbon doorway"
+            alt="Photographer holding a camera in a doorway"
             strength={0.1}
             className="aspect-[4/5] w-full"
           />
         </Reveal>
         <Reveal delay={140} className="lg:pt-16">
           <p className="font-display text-3xl leading-[1.4] sm:text-4xl">
-            A photograph should feel like a memory, not a performance.
+            Keep the feeling.
           </p>
-          <div className="mt-10 space-y-6 text-base leading-relaxed text-muted-foreground">
-            <p>
-              I started with film and a darkroom in my parents' laundry room, and something of that
-              slowness stayed with me. I shoot in available light, edit with a gentle hand, and
-              never ask anyone to say cheese.
-            </p>
-            <p>
-              Sessions usually run ninety minutes and feel more like a walk than a shoot. Children
-              are allowed to be children. Couples are allowed to be quiet. What comes back are
-              pictures you recognise as your own life.
-            </p>
-            <p>
-              I work in Portuguese and English, travel across Portugal, and take a limited number of
-              sessions each month so nothing feels rushed.
-            </p>
-          </div>
+          <p className="mt-10 text-base leading-relaxed text-muted-foreground">
+            Photography for people, places and moments that deserve more than a memory.
+          </p>
         </Reveal>
       </div>
-
-      <section className="border-t border-border px-6 py-28 sm:px-10 sm:py-36">
-        <div className="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-28">
-          <Reveal>
-            <p className="label-caps">Where we shoot</p>
-          </Reveal>
-          <Reveal delay={120}>
-            <ul className="grid grid-cols-1 gap-x-12 gap-y-4 text-lg sm:grid-cols-2">
-              {places.map((place) => (
-                <li key={place} className="border-b border-border pb-4 font-display text-2xl">
-                  {place}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-      </section>
 
       <section className="px-6 pb-36 sm:px-10 sm:pb-48">
         <Reveal className="mx-auto max-w-2xl text-center">
