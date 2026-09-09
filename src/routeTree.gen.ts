@@ -12,12 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CouplesRouteImport } from './routes/couples'
-import { Route as FamiliesRouteImport } from './routes/families'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
-import { Route as PortraitsRouteImport } from './routes/portraits'
-import { Route as PricingRouteImport } from './routes/pricing'
-import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as InfoRouteImport } from './routes/info'
+import { Route as WorkRouteImport } from './routes/work'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,34 +30,14 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CouplesRoute = CouplesRouteImport.update({
-  id: '/couples',
-  path: '/couples',
+const InfoRoute = InfoRouteImport.update({
+  id: '/info',
+  path: '/info',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FamiliesRoute = FamiliesRouteImport.update({
-  id: '/families',
-  path: '/families',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PortraitsRoute = PortraitsRouteImport.update({
-  id: '/portraits',
-  path: '/portraits',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TestimonialsRoute = TestimonialsRouteImport.update({
-  id: '/testimonials',
-  path: '/testimonials',
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -69,82 +45,38 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/couples': typeof CouplesRoute
-  '/families': typeof FamiliesRoute
-  '/portfolio': typeof PortfolioRoute
-  '/portraits': typeof PortraitsRoute
-  '/pricing': typeof PricingRoute
-  '/testimonials': typeof TestimonialsRoute
+  '/info': typeof InfoRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/couples': typeof CouplesRoute
-  '/families': typeof FamiliesRoute
-  '/portfolio': typeof PortfolioRoute
-  '/portraits': typeof PortraitsRoute
-  '/pricing': typeof PricingRoute
-  '/testimonials': typeof TestimonialsRoute
+  '/info': typeof InfoRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/couples': typeof CouplesRoute
-  '/families': typeof FamiliesRoute
-  '/portfolio': typeof PortfolioRoute
-  '/portraits': typeof PortraitsRoute
-  '/pricing': typeof PricingRoute
-  '/testimonials': typeof TestimonialsRoute
+  '/info': typeof InfoRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/couples'
-    | '/families'
-    | '/portfolio'
-    | '/portraits'
-    | '/pricing'
-    | '/testimonials'
+  fullPaths: '/' | '/about' | '/contact' | '/info' | '/work'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/couples'
-    | '/families'
-    | '/portfolio'
-    | '/portraits'
-    | '/pricing'
-    | '/testimonials'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/couples'
-    | '/families'
-    | '/portfolio'
-    | '/portraits'
-    | '/pricing'
-    | '/testimonials'
+  to: '/' | '/about' | '/contact' | '/info' | '/work'
+  id: '__root__' | '/' | '/about' | '/contact' | '/info' | '/work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  CouplesRoute: typeof CouplesRoute
-  FamiliesRoute: typeof FamiliesRoute
-  PortfolioRoute: typeof PortfolioRoute
-  PortraitsRoute: typeof PortraitsRoute
-  PricingRoute: typeof PricingRoute
-  TestimonialsRoute: typeof TestimonialsRoute
+  InfoRoute: typeof InfoRoute
+  WorkRoute: typeof WorkRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -170,46 +102,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/couples': {
-      id: '/couples'
-      path: '/couples'
-      fullPath: '/couples'
-      preLoaderRoute: typeof CouplesRouteImport
+    '/info': {
+      id: '/info'
+      path: '/info'
+      fullPath: '/info'
+      preLoaderRoute: typeof InfoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/families': {
-      id: '/families'
-      path: '/families'
-      fullPath: '/families'
-      preLoaderRoute: typeof FamiliesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portraits': {
-      id: '/portraits'
-      path: '/portraits'
-      fullPath: '/portraits'
-      preLoaderRoute: typeof PortraitsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/testimonials': {
-      id: '/testimonials'
-      path: '/testimonials'
-      fullPath: '/testimonials'
-      preLoaderRoute: typeof TestimonialsRouteImport
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -219,12 +123,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  CouplesRoute: CouplesRoute,
-  FamiliesRoute: FamiliesRoute,
-  PortfolioRoute: PortfolioRoute,
-  PortraitsRoute: PortraitsRoute,
-  PricingRoute: PricingRoute,
-  TestimonialsRoute: TestimonialsRoute,
+  InfoRoute: InfoRoute,
+  WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

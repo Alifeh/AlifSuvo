@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
 
-export const Route = createFileRoute("/pricing")({
+export const Route = createFileRoute("/info")({
   head: () => ({
     meta: [
       { title: "Info — Alif Suvo" },

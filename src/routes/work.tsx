@@ -3,7 +3,7 @@ import { Gallery } from "@/components/site/Gallery";
 import { PageHeader } from "@/components/site/PageHeader";
 import { photos } from "@/lib/work";
 
-export const Route = createFileRoute("/portfolio")({
+export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
       { title: "Work — Alif Suvo" },
