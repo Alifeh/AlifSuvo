@@ -7,16 +7,16 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a Session — Mara Alves Photography, Lisbon" },
+      { title: "Contact — Alif Suvo" },
       {
         name: "description",
         content:
-          "Enquire about a family, couple or portrait photography session in Lisbon. Tell me your dates and I'll reply within two days.",
+          "Contact Alif Suvo about photography, creative work and commissions.",
       },
-      { property: "og:title", content: "Book a Session — Mara Alves Photography, Lisbon" },
+      { property: "og:title", content: "Contact — Alif Suvo" },
       {
         property: "og:description",
-        content: "Enquire about a photography session in Lisbon — families, couples, portraits.",
+        content: "Contact Alif Suvo about photography and creative work.",
       },
     ],
   }),
@@ -39,9 +39,9 @@ function Contact() {
   return (
     <>
       <PageHeader
-        label="Booking"
-        title="Tell me about your people."
-        intro="A few lines is plenty — who's coming, roughly when, and what you're hoping for. I answer every message personally, usually within two days."
+        label="Contact"
+        title="Start a conversation."
+        intro="Tell me a little about what you have in mind."
       />
 
       <section className="mx-auto max-w-[1400px] px-6 pb-36 sm:px-10 sm:pb-48">
@@ -49,10 +49,9 @@ function Contact() {
           <Reveal>
             {sent ? (
               <div className="border border-border p-12 text-center">
-                <h2 className="text-3xl sm:text-4xl">Thank you — it's on its way.</h2>
+                <h2 className="text-3xl sm:text-4xl">Thank you.</h2>
                 <p className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-muted-foreground">
-                  I'll be in touch within two days with availability and the next steps. If it's
-                  urgent, email me directly at hello@maraalves.pt.
+                  Your message has been noted. You can also email me directly at Alifpicster@gmail.com.
                 </p>
                 <button
                   type="button"
@@ -69,7 +68,7 @@ function Contact() {
                     <label className={labelClass} htmlFor="name">
                       Your name
                     </label>
-                    <input id="name" name="name" required className={fieldClass} placeholder="Inês Ferreira" />
+                    <input id="name" name="name" required className={fieldClass} placeholder="Your name" />
                   </div>
                   <div className="space-y-4">
                     <label className={labelClass} htmlFor="email">
@@ -81,7 +80,7 @@ function Contact() {
                       type="email"
                       required
                       className={fieldClass}
-                      placeholder="you@example.com"
+                       placeholder="Email"
                     />
                   </div>
                   <div className="space-y-4">
@@ -113,7 +112,7 @@ function Contact() {
                     rows={5}
                     required
                     className={`${fieldClass} resize-none`}
-                    placeholder="Who's coming, where you'd love to shoot, anything else…"
+                     placeholder="Tell me a little about what you have in mind"
                   />
                 </div>
 
@@ -131,28 +130,28 @@ function Contact() {
             <div>
               <p className="label-caps">Email</p>
               <a
-                href="mailto:hello@maraalves.pt"
+                href="mailto:Alifpicster@gmail.com"
                 className="link-underline mt-4 inline-block font-display text-2xl"
               >
-                hello@maraalves.pt
+                Alifpicster@gmail.com
               </a>
             </div>
             <div>
               <p className="label-caps">Instagram</p>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/Alif_Suvo"
                 target="_blank"
                 rel="noreferrer"
                 className="link-underline mt-4 inline-block font-display text-2xl"
               >
-                @maraalves.photo
+                @Alif_Suvo
               </a>
             </div>
             <div>
               <p className="label-caps">Based in</p>
-              <p className="mt-4 font-display text-2xl">Lisboa, Portugal</p>
+              <p className="mt-4 font-display text-2xl">Currently working from Lisbon.</p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Travelling anywhere in Portugal, and further for the right story.
+                Available wherever the work takes me.
               </p>
             </div>
           </Reveal>

@@ -3,19 +3,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
 
-export const Route = createFileRoute("/pricing")({
+export const Route = createFileRoute("/info")({
   head: () => ({
     meta: [
-      { title: "Session Pricing — Mara Alves Photography, Lisbon" },
+      { title: "Info — Alif Suvo" },
       {
         name: "description",
         content:
-          "Three simple photography session tiers in Lisbon: session length, edited images, delivery time and price.",
+          "Session information and pricing for photography by Alif Suvo.",
       },
-      { property: "og:title", content: "Session Pricing — Mara Alves Photography, Lisbon" },
+      { property: "og:title", content: "Info — Alif Suvo" },
       {
         property: "og:description",
-        content: "Three simple session tiers for families, couples and portraits in Lisbon.",
+        content: "Session information and pricing for photography by Alif Suvo.",
       },
     ],
   }),
@@ -25,28 +25,28 @@ export const Route = createFileRoute("/pricing")({
 const tiers = [
   {
     name: "The Short Story",
-    price: "€290",
+    price: "€145",
     length: "45 minutes",
     images: "25+ edited images",
     delivery: "Gallery in 10 days",
-    lines: ["One location", "Best for portraits or a first session", "Print-ready files"],
+    lines: [],
   },
   {
     name: "The Long Afternoon",
-    price: "€480",
+    price: "€240",
     length: "90 minutes",
     images: "60+ edited images",
     delivery: "Gallery in 14 days",
-    lines: ["Two locations", "Ideal for families and couples", "Private online gallery"],
+    lines: [],
     featured: true,
   },
   {
     name: "The Whole Day",
-    price: "€950",
+    price: "€475",
     length: "4 hours",
     images: "150+ edited images",
     delivery: "Gallery in 21 days",
-    lines: ["Documentary, from morning on", "Travel within Portugal included", "Handmade print box"],
+    lines: [],
   },
 ];
 
@@ -54,9 +54,9 @@ function Pricing() {
   return (
     <>
       <PageHeader
-        label="Pricing"
-        title="Simple, and quietly generous."
-        intro="Every session includes the planning conversation, the shoot itself, careful editing, and a private gallery you can download and share. No hidden extras."
+        label="Info"
+        title="Session information."
+        intro="Three ways to work together. For anything outside these formats, get in touch."
       />
 
       <section className="mx-auto max-w-[1400px] px-6 pb-28 sm:px-10 sm:pb-40">
@@ -106,12 +106,6 @@ function Pricing() {
           ))}
         </div>
 
-        <Reveal delay={180}>
-          <p className="mx-auto mt-16 max-w-xl text-center text-sm leading-relaxed text-muted-foreground">
-            Something else in mind — a newborn morning, an anniversary in Sintra, a family reunion?
-            Custom sessions are always possible. Tell me what you're imagining.
-          </p>
-        </Reveal>
       </section>
     </>
   );

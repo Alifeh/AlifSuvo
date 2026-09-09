@@ -4,13 +4,10 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/families", label: "Families" },
-  { to: "/couples", label: "Couples" },
-  { to: "/portraits", label: "Portraits" },
+  { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
-  { to: "/pricing", label: "Pricing" },
-  { to: "/testimonials", label: "Words" },
+  { to: "/info", label: "Info" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {
@@ -47,7 +44,7 @@ export function SiteHeader() {
             solid ? "text-foreground" : "text-background",
           )}
         >
-          Mara Alves
+          Alif Suvo
         </Link>
 
         <nav className="hidden items-center gap-9 lg:flex">
@@ -66,17 +63,6 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            className={cn(
-              "border px-6 py-2.5 text-[0.7rem] tracking-[0.26em] uppercase transition-colors duration-500",
-              solid
-                ? "border-foreground text-foreground hover:bg-foreground hover:text-background"
-                : "border-background/70 text-background hover:bg-background hover:text-foreground",
-            )}
-          >
-            Book
-          </Link>
         </nav>
 
         <button
@@ -96,7 +82,7 @@ export function SiteHeader() {
       {open ? (
         <div className="border-t border-border bg-background px-6 py-8 lg:hidden">
           <nav className="flex flex-col gap-5">
-            {[...links, { to: "/contact", label: "Book a session" } as const].map((link) => (
+            {links.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
