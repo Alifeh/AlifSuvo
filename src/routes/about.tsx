@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { PageHeader } from "@/components/site/PageHeader";
-import { ParallaxImage } from "@/components/site/ParallaxImage";
 import { Reveal } from "@/components/site/Reveal";
-import about from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -37,24 +35,28 @@ function About() {
         intro="Independent photographer and visual storyteller. Currently working from Lisbon."
       />
 
-      <div className="mx-auto grid max-w-[1400px] gap-12 px-6 pb-28 sm:px-10 lg:grid-cols-[1.05fr_1fr] lg:gap-24 lg:pb-40">
-        <Reveal>
-          <ParallaxImage
-            src={about}
-            alt="Photographer holding a camera in a doorway"
-            strength={0.1}
-            className="aspect-[4/5] w-full"
-          />
-        </Reveal>
-        <Reveal delay={140} className="lg:pt-16">
-          <p className="font-display text-3xl leading-[1.4] sm:text-4xl">
-            Keep the feeling.
-          </p>
-          <p className="mt-10 text-base leading-relaxed text-muted-foreground">
-            Photography for people, places and moments that deserve more than a memory.
-          </p>
-        </Reveal>
-      </div>
+      <section className="mx-auto max-w-[1400px] px-6 pb-28 sm:px-10 sm:pb-40">
+        <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-28">
+          <Reveal>
+            <p className="label-caps">The approach</p>
+          </Reveal>
+          <Reveal delay={120} className="max-w-2xl">
+            <p className="font-display text-3xl leading-[1.4] sm:text-4xl">Keep the feeling.</p>
+            <p className="mt-10 text-base leading-relaxed text-muted-foreground">
+              Photography for people, places and moments that deserve more than a memory.
+            </p>
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+              I work quietly. Sessions are unhurried and unposed, built around how people actually
+              are together rather than a list of arrangements. Light, distance and timing do most of
+              the work; direction is minimal, and only when it helps someone feel at ease.
+            </p>
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+              The editing follows the same idea — natural tones, nothing overworked, images that
+              still look like the day they were made.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="px-6 pb-36 sm:px-10 sm:pb-48">
         <Reveal className="mx-auto max-w-2xl text-center">
