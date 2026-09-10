@@ -34,7 +34,6 @@ const tiers = [
   {
     name: "The Long Afternoon",
     price: "€240",
-    featured: true,
   },
   {
     name: "The Whole Day",
@@ -56,13 +55,9 @@ function Pricing() {
           {tiers.map((tier, i) => (
             <Reveal key={tier.name} delay={i * 120}>
               <div
-                className={`flex h-full flex-col border p-10 transition-colors duration-500 ${
-                  tier.featured
-                    ? "border-foreground bg-secondary"
-                    : "border-border hover:border-foreground"
-                }`}
+                className="flex h-full flex-col border border-border p-10 transition-colors duration-500 hover:border-foreground"
               >
-                <p className="label-caps">{tier.featured ? "Most chosen" : `0${i + 1}`}</p>
+                <p className="label-caps">0{i + 1}</p>
                 <h2 className="mt-6 text-3xl">{tier.name}</h2>
                 <p className="mt-6 font-display text-5xl">{tier.price}</p>
 
