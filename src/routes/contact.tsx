@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { type FormEvent } from "react";
 
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
@@ -18,7 +18,11 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Contact Alif Suvo about photography and creative work.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://alifsuvo.lovable.app/contact" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://alifsuvo.lovable.app/contact" }],
   }),
   component: Contact,
 });
@@ -29,11 +33,14 @@ const fieldClass =
 const labelClass = "label-caps block";
 
 function Contact() {
-  const [sent, setSent] = useState(false);
-
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSent(true);
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") ?? "");
+    const email = String(data.get("email") ?? "");
+    const message = String(data.get("message") ?? "");
+    const body = [`Name: ${name}`, `Email: ${email}`, "", message].join("\n");
+    window.location.href = `mailto:Alifpicster@gmail.com?subject=${encodeURIComponent("Photography enquiry")}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -47,22 +54,7 @@ function Contact() {
       <section className="mx-auto max-w-[1400px] px-6 pb-36 sm:px-10 sm:pb-48">
         <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:gap-28">
           <Reveal>
-            {sent ? (
-              <div className="border border-border p-12 text-center">
-                <h2 className="text-3xl sm:text-4xl">Thank you.</h2>
-                <p className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-muted-foreground">
-                  Your message has been noted. You can also email me directly at Alifpicster@gmail.com.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setSent(false)}
-                  className="link-underline mt-10 text-[0.7rem] tracking-[0.28em] uppercase"
-                >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={onSubmit} className="space-y-12">
+            <form onSubmit={onSubmit} className="space-y-12">
                 <div className="grid gap-12 sm:grid-cols-2">
                   <div className="space-y-4">
                     <label className={labelClass} htmlFor="name">
@@ -82,23 +74,6 @@ function Contact() {
                       className={fieldClass}
                        placeholder="Email"
                     />
-                  </div>
-                  <div className="space-y-4">
-                    <label className={labelClass} htmlFor="session">
-                      Session type
-                    </label>
-                    <select id="session" name="session" className={fieldClass} defaultValue="Family">
-                      <option>Family</option>
-                      <option>Couple</option>
-                      <option>Portrait</option>
-                      <option>Something else</option>
-                    </select>
-                  </div>
-                  <div className="space-y-4">
-                    <label className={labelClass} htmlFor="date">
-                      Preferred date
-                    </label>
-                    <input id="date" name="date" type="date" className={fieldClass} />
                   </div>
                 </div>
 
@@ -120,10 +95,9 @@ function Contact() {
                   type="submit"
                   className="border border-foreground px-12 py-4 text-[0.7rem] tracking-[0.28em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background"
                 >
-                  Send enquiry
+                  Open email
                 </button>
-              </form>
-            )}
+            </form>
           </Reveal>
 
           <Reveal delay={140} className="space-y-12">

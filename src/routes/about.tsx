@@ -19,7 +19,11 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Independent photography and visual storytelling by Alif Suvo.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://alifsuvo.lovable.app/about" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://alifsuvo.lovable.app/about" }],
   }),
   component: About,
 });

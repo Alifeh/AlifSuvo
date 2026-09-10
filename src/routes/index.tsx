@@ -20,7 +20,11 @@ export const Route = createFileRoute("/")({
         content:
           "Photography for people, places and moments that deserve more than a memory.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://alifsuvo.lovable.app/" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://alifsuvo.lovable.app/" }],
   }),
   component: Index,
 });
@@ -111,14 +115,11 @@ function Index() {
       <section className="px-6 pb-36 sm:px-10 sm:pb-48">
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="text-4xl leading-tight sm:text-6xl">Let's make something you'll keep.</h2>
-          <p className="mx-auto mt-7 max-w-md text-base leading-relaxed text-muted-foreground">
-            Sessions are limited each month so every story gets the time it deserves.
-          </p>
           <Link
             to="/contact"
             className="mt-10 inline-block border border-foreground px-10 py-4 text-[0.7rem] tracking-[0.28em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background"
           >
-            Book a session
+            Contact
           </Link>
         </Reveal>
       </section>

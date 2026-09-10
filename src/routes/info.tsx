@@ -17,7 +17,11 @@ export const Route = createFileRoute("/info")({
         property: "og:description",
         content: "Session information and pricing for photography by Alif Suvo.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://alifsuvo.lovable.app/info" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://alifsuvo.lovable.app/info" }],
   }),
   component: Pricing,
 });
@@ -26,27 +30,14 @@ const tiers = [
   {
     name: "The Short Story",
     price: "€145",
-    length: "45 minutes",
-    images: "25+ edited images",
-    delivery: "Gallery in 10 days",
-    lines: [],
   },
   {
     name: "The Long Afternoon",
     price: "€240",
-    length: "90 minutes",
-    images: "60+ edited images",
-    delivery: "Gallery in 14 days",
-    lines: [],
-    featured: true,
   },
   {
     name: "The Whole Day",
     price: "€475",
-    length: "4 hours",
-    images: "150+ edited images",
-    delivery: "Gallery in 21 days",
-    lines: [],
   },
 ];
 
@@ -64,36 +55,11 @@ function Pricing() {
           {tiers.map((tier, i) => (
             <Reveal key={tier.name} delay={i * 120}>
               <div
-                className={`flex h-full flex-col border p-10 transition-colors duration-500 ${
-                  tier.featured
-                    ? "border-foreground bg-secondary"
-                    : "border-border hover:border-foreground"
-                }`}
+                className="flex h-full flex-col border border-border p-10 transition-colors duration-500 hover:border-foreground"
               >
-                <p className="label-caps">{tier.featured ? "Most chosen" : `0${i + 1}`}</p>
+                <p className="label-caps">0{i + 1}</p>
                 <h2 className="mt-6 text-3xl">{tier.name}</h2>
                 <p className="mt-6 font-display text-5xl">{tier.price}</p>
-
-                <dl className="mt-10 space-y-3 border-t border-border pt-8 text-sm text-muted-foreground">
-                  <div className="flex justify-between gap-4">
-                    <dt>Length</dt>
-                    <dd className="text-foreground">{tier.length}</dd>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <dt>Images</dt>
-                    <dd className="text-foreground">{tier.images}</dd>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <dt>Delivery</dt>
-                    <dd className="text-foreground">{tier.delivery}</dd>
-                  </div>
-                </dl>
-
-                <ul className="mt-8 space-y-3 text-sm leading-relaxed text-muted-foreground">
-                  {tier.lines.map((line) => (
-                    <li key={line}>{line}</li>
-                  ))}
-                </ul>
 
                 <Link
                   to="/contact"
