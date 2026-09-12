@@ -47,7 +47,7 @@ function Index() {
         <div className="relative flex h-full flex-col justify-end px-6 pb-20 sm:px-10 sm:pb-24">
           <div className="mx-auto w-full max-w-[1400px]">
             <p className="animate-fade-in text-[0.68rem] tracking-[0.34em] text-background/75 uppercase">
-              Lisbon, Portugal — 2026
+              Photographer &amp; visual storyteller
             </p>
             <h1 className="mt-6 max-w-4xl animate-fade-in text-5xl leading-[1.02] text-background sm:text-7xl lg:text-[5.5rem]">
               Keep the feeling.
@@ -78,7 +78,7 @@ function Index() {
               moments that hold their feeling.
             </p>
             <p className="mt-10 max-w-lg text-base leading-relaxed text-muted-foreground">
-              Currently working from Lisbon.
+              Working wherever the work takes me.
             </p>
           </Reveal>
         </div>
