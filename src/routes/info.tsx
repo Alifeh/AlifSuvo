@@ -27,11 +27,6 @@ export const Route = createFileRoute("/info")({
   component: Info,
 });
 
-const tiers = [
-  { name: "The Short Story", price: "€145" },
-  { name: "The Long Afternoon", price: "€240" },
-  { name: "The Whole Day", price: "€475" },
-];
 
 const steps = [
   {
@@ -59,7 +54,7 @@ const faqs = [
   },
   {
     q: "Where are sessions available?",
-    a: "I am currently working from Lisbon, so most sessions happen there and around it.",
+    a: "Sessions happen wherever the work takes me. Mention where you are in your enquiry and we will work out what is possible.",
   },
   {
     q: "Do you ever travel for work?",
@@ -109,31 +104,6 @@ function Info() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1400px] px-6 pb-28 sm:px-10 sm:pb-36">
-        <Reveal>
-          <p className="label-caps">Sessions</p>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Three ways to work together. For anything outside these formats, get in touch.
-          </p>
-        </Reveal>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3 lg:gap-8">
-          {tiers.map((tier, i) => (
-            <Reveal key={tier.name} delay={i * 120}>
-              <div className="flex h-full flex-col border border-border p-10 transition-colors duration-500 hover:border-foreground">
-                <p className="label-caps">0{i + 1}</p>
-                <h2 className="mt-6 text-3xl">{tier.name}</h2>
-                <p className="mt-6 font-display text-5xl">{tier.price}</p>
-                <Link
-                  to="/contact"
-                  className="mt-auto pt-10 text-[0.7rem] tracking-[0.28em] uppercase"
-                >
-                  <span className="link-underline">Enquire</span>
-                </Link>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
 
       <section className="mx-auto max-w-[1400px] px-6 pb-28 sm:px-10 sm:pb-36">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.4fr] lg:gap-24">

@@ -216,10 +216,11 @@ function Contact() {
               </a>
             </div>
             <div>
-              <p className="label-caps">Based in</p>
-              <p className="mt-4 font-display text-2xl">Currently working from Lisbon.</p>
+              <p className="label-caps">Location</p>
+              <p className="mt-4 font-display text-2xl">Wherever the work takes me.</p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Available wherever the work takes me.
+                Sessions are available in different places throughout the year — mention where you
+                are in your enquiry.
               </p>
             </div>
           </Reveal>
