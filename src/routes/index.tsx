@@ -112,6 +112,106 @@ function Index() {
         </div>
       </section>
 
+      <section className="border-t border-border px-6 py-32 sm:px-10 sm:py-44">
+        <div className="mx-auto max-w-[1400px]">
+          <Reveal>
+            <p className="label-caps">Field Notes</p>
+            <h2 className="mt-6 max-w-2xl text-4xl leading-tight sm:text-5xl">
+              Notes from behind the camera.
+            </h2>
+          </Reveal>
+
+          <div className="mt-20 space-y-24 sm:space-y-28">
+            <div className="grid gap-14 lg:grid-cols-[1fr_1.4fr] lg:gap-24">
+              <Reveal>
+                <p className="label-caps">Behind the frame</p>
+              </Reveal>
+              <div className="space-y-14">
+                {[
+                  {
+                    photo: photos[1]!,
+                    note: "The light lasted only a few minutes. They stopped talking without being asked, and the frame made itself.",
+                  },
+                  {
+                    photo: photos[3]!,
+                    note: "A small, ordinary gesture — the kind that disappears if you announce it first.",
+                  },
+                  {
+                    photo: photos[6]!,
+                    note: "Old steps, two sisters, no direction given. Some frames are simply noticed, not made.",
+                  },
+                ].map((item, i) => (
+                  <Reveal key={item.photo.src} delay={i * 100}>
+                    <div className="grid gap-6 border-t border-border pt-8 sm:grid-cols-[160px_1fr] sm:gap-10">
+                      <img
+                        src={item.photo.src}
+                        alt={item.photo.alt}
+                        loading="lazy"
+                        className="aspect-[4/5] w-40 object-cover"
+                      />
+                      <p className="max-w-md self-center text-base leading-relaxed text-muted-foreground">
+                        {item.note}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-14 lg:grid-cols-[1fr_1.4fr] lg:gap-24">
+              <Reveal>
+                <p className="label-caps">The feeling</p>
+              </Reveal>
+              <div className="space-y-12">
+                {[
+                  {
+                    title: "Natural & playful",
+                    body: "Nothing rehearsed. The best frames happen when people forget the camera and simply stay themselves.",
+                  },
+                  {
+                    title: "Quiet & intimate",
+                    body: "Photographed from a small distance, so the moments stay honest and unhurried.",
+                  },
+                  {
+                    title: "Cinematic & expressive",
+                    body: "Light, weather and atmosphere treated as part of the story — not a backdrop to it.",
+                  },
+                ].map((item, i) => (
+                  <Reveal key={item.title} delay={i * 100}>
+                    <div className="border-t border-border pt-8">
+                      <h3 className="text-2xl">{item.title}</h3>
+                      <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+                        {item.body}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-14 lg:grid-cols-[1fr_1.4fr] lg:gap-24">
+              <Reveal>
+                <p className="label-caps">Visual notes</p>
+              </Reveal>
+              <div className="space-y-10">
+                {[
+                  "Morning light through tall windows — worth arriving early for.",
+                  "Wind is not a problem. It is movement the frame would otherwise lack.",
+                  "The in-between moments — walking, waiting, laughing at nothing — carry the most feeling.",
+                  "Overcast days make the softest portraits.",
+                ].map((note, i) => (
+                  <Reveal key={note} delay={i * 80}>
+                    <p className="border-t border-border pt-6 font-display text-xl leading-relaxed text-foreground/90 sm:text-2xl">
+                      {note}
+                    </p>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 pb-36 sm:px-10 sm:pb-48">
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="text-4xl leading-tight sm:text-6xl">Let's make something you'll keep.</h2>
