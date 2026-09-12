@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "About Alif Suvo, an independent photographer and visual storyteller currently working from Lisbon.",
+          "About Alif Suvo, an independent photographer and visual storyteller.",
       },
       { property: "og:title", content: "About — Alif Suvo" },
       {
@@ -32,7 +32,7 @@ function About() {
       <PageHeader
         label="About"
         title="Alif Suvo"
-        intro="Independent photographer and visual storyteller. Currently working from Lisbon."
+        intro="Independent photographer and visual storyteller."
       />
 
       <section className="mx-auto max-w-[1400px] px-6 pb-28 sm:px-10 sm:pb-40">
