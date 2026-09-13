@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
 import { supabase } from "@/integrations/supabase/client";
+import { notifyInquiry } from "@/lib/inquiries.functions";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -59,6 +60,10 @@ function Contact() {
       setStatus("error");
       return;
     }
+
+    notifyInquiry({ data: payload }).catch((notifyError) => {
+      console.error("Inquiry notification failed", notifyError);
+    });
 
     form.reset();
     setStatus("sent");
